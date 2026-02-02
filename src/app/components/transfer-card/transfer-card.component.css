@@ -1,0 +1,814 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.transfer-card {
+  margin-bottom: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.card {
+  border-radius: 16px;
+  border: none;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+
+.card-full-height {
+  height: 100%;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Left cards: stretch to fill full height (no empty space below content) */
+.transfer-card:not(.compact) .card {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+}
+
+.transfer-card:not(.compact) .card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+}
+
+.transfer-card:not(.compact) .card-layout {
+  flex: 1;
+  min-height: 0;
+  flex-wrap: nowrap;
+  align-items: stretch;
+}
+
+.card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.card-body-no-padding {
+  padding: 0;
+}
+
+.card-layout {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  min-height: 0;
+}
+
+.card-block-full {
+  flex: 0 0 100%;
+  width: 100%;
+}
+
+.card-block-image {
+  flex: 0 0 100%;
+  width: 100%;
+}
+
+.card-block-content {
+  flex: 0 0 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+@media (min-width: 768px) {
+  .transfer-card:not(.compact) .card-block-image {
+    flex: 0 0 41.666667%;
+    max-width: 41.666667%;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+  .transfer-card:not(.compact) .card-block-content {
+    flex: 0 0 58.333333%;
+    max-width: 58.333333%;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+  .transfer-card:not(.compact) .vehicle-image-container {
+    flex: 1;
+    min-height: 0;
+    align-items: stretch;
+    justify-content: center;
+  }
+  .transfer-card:not(.compact) .card-block-content .card-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+}
+
+.card-padding {
+  padding: 1rem;
+}
+
+.spacing-sm {
+  margin-bottom: 0.5rem;
+}
+
+.spacing-md {
+  margin-bottom: 1rem;
+}
+
+.spacing-bottom {
+  margin-bottom: 1rem;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.info-grid-item {
+  min-width: 0;
+}
+
+.card:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+}
+
+.vehicle-image-container {
+  background-color: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  height: 100%;
+  min-height: 200px;
+}
+
+/* Left column cards: image section full height, light gray background */
+.transfer-card:not(.compact) .vehicle-image-container {
+  height: 100%;
+  min-height: 200px;
+  background-color: #f8f8f8;
+  padding: 0;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.transfer-card:not(.compact) .card-block-content {
+  background-color: #fff;
+}
+
+.transfer-card:not(.compact) .card-padding {
+  padding: 1.75rem 2rem;
+}
+
+.transfer-card:not(.compact) .badges {
+  margin-bottom: 14px;
+  gap: 12px;
+}
+
+.transfer-card:not(.compact) .badge {
+  padding: 6px 14px;
+  font-size: 13px;
+  border-radius: 22px;
+}
+
+.transfer-card:not(.compact) .card-title {
+  margin-bottom: 16px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.transfer-card:not(.compact) .info-grid {
+  gap: 12px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.transfer-card:not(.compact) .info-grid-item {
+  min-width: 0;
+  width: 100%;
+  display: flex;
+}
+
+.transfer-card:not(.compact) .info-pill {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px 12px;
+  align-items: center;
+}
+
+.transfer-card:not(.compact) .pill-icon {
+  font-size: 18px;
+}
+
+.transfer-card:not(.compact) .pill-label {
+  font-size: 12px;
+}
+
+.transfer-card:not(.compact) .pill-value {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.transfer-card:not(.compact) .price-section {
+  margin-top: auto;
+  margin-bottom: 0;
+  align-items: flex-end;
+  padding-top: 20px;
+  border-top: 1px solid #e5e5e5;
+}
+
+.transfer-card:not(.compact) .price {
+  margin-bottom: 6px;
+  font-size: 34px;
+  font-weight: 800;
+}
+
+.transfer-card:not(.compact) .price-detail,
+.transfer-card:not(.compact) .price-disclaimer {
+  margin: 0;
+  font-size: 14px;
+}
+
+.transfer-card:not(.compact) .price-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.transfer-card:not(.compact) .btn-offer {
+  padding: 14px 28px;
+  font-size: 16px;
+  border-radius: 28px;
+  max-width: 160px;
+}
+
+.transfer-card:not(.compact) .vehicle-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.vehicle-image {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.badges {
+  display: flex;
+  gap: 8px;
+}
+
+.badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge-garanti {
+  background-color: #4361EE;
+  color: white;
+}
+
+.badge-meilleur {
+  background-color: #06D6A0;
+  color: white;
+}
+
+.badge-standard {
+  background-color: #6C63FF;
+  color: white;
+}
+
+.badge-shuttle {
+  background-color: #3CB371;
+  color: white;
+}
+
+/* Pill icon wrapper: inline by default, circle on left cards */
+.pill-icon-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Left cards: icon in colored circle, compact size (match right column) */
+.transfer-card:not(.compact) .pill-icon-wrap {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.transfer-card:not(.compact) .info-pill-blue .pill-icon-wrap {
+  background-color: #6C63FF;
+}
+
+.transfer-card:not(.compact) .info-pill-pink .pill-icon-wrap {
+  background-color: #c91e8c;
+}
+
+.transfer-card:not(.compact) .info-pill-orange .pill-icon-wrap {
+  background-color: #e07c3c;
+}
+
+.transfer-card:not(.compact) .info-pill-green .pill-icon-wrap {
+  background-color: #3CB371;
+}
+
+.transfer-card:not(.compact) .pill-icon-wrap .pill-icon {
+  color: white;
+  font-size: 18px;
+}
+
+/* Compact: colored pills with Material icon (match image) */
+.info-pill {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: 10px;
+}
+
+.info-pill-blue {
+  background-color: #e0e7ff;
+}
+
+.info-pill-blue .pill-icon {
+  color: #6C63FF;
+}
+
+.info-pill-orange {
+  background-color: #fff0e0;
+}
+
+.info-pill-orange .pill-icon {
+  color: #e07c3c;
+}
+
+.info-pill-pink {
+  background-color: #ffe0f5;
+}
+
+.info-pill-pink .pill-icon {
+  color: #c91e8c;
+}
+
+.info-pill-green {
+  background-color: #e0fff0;
+}
+
+.info-pill-green .pill-icon {
+  color: #3CB371;
+}
+
+.pill-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.pill-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.pill-label {
+  font-size: 11px;
+  color: #666;
+}
+
+.pill-value {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.price-disclaimer {
+  font-size: 11px;
+  color: #666;
+}
+
+.compact .price-section {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.btn-offer-full {
+  width: 100%;
+  margin-top: 8px;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.booking-info-section {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 12px;
+  background-color: #fafafa;
+}
+
+.section-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 12px 0;
+}
+
+.detail-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.detail-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #4361EE;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: white;
+  flex-shrink: 0;
+}
+
+.detail-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.detail-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: #666;
+  margin-bottom: 2px;
+}
+
+.detail-value {
+  font-size: 14px;
+  font-weight: 500;
+  color: #1a1a1a;
+}
+
+.icon-hotel::before {
+  content: '🏨';
+}
+
+.icon-calendar::before {
+  content: '📅';
+}
+
+.icon-guests::before {
+  content: '👥';
+}
+
+.info-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+}
+
+.info-box-blue {
+  background-color: #E8EEFF;
+}
+
+.info-box-pink {
+  background-color: #FFE8F7;
+}
+
+.info-box-orange {
+  background-color: #FFE8D6;
+}
+
+.info-box-teal {
+  background-color: #D6FFF0;
+}
+
+.info-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.info-box-blue .info-icon {
+  background-color: #4361EE;
+  color: white;
+}
+
+.info-box-pink .info-icon {
+  background-color: #E91E8C;
+  color: white;
+}
+
+.info-box-orange .info-icon {
+  background-color: #FF8A3D;
+  color: white;
+}
+
+.info-box-teal .info-icon {
+  background-color: #06D6A0;
+  color: white;
+}
+
+.icon-user::before,
+.icon-luggage::before,
+.icon-bag::before,
+.icon-suitcase::before {
+  content: '👤';
+  font-size: 14px;
+}
+
+.icon-luggage::before {
+  content: '🧳';
+}
+
+.icon-bag::before {
+  content: '💼';
+}
+
+.icon-suitcase::before {
+  content: '🧳';
+}
+
+.info-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.info-label {
+  font-size: 10px;
+  color: #666;
+  margin-bottom: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.info-value {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.price-section {
+  margin-top: auto;
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price {
+  font-size: 28px;
+  font-weight: 700;
+  color: #6C63FF;
+  margin-bottom: 4px;
+}
+
+.price-detail {
+  font-size: 11px;
+  color: #666;
+}
+
+.btn-offer {
+  background: linear-gradient(90deg, #6C63FF 0%, #FF69B4 100%);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 24px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: auto;
+  max-width: 140px;
+  box-shadow: 0 2px 8px rgba(108, 99, 255, 0.3);
+}
+
+.btn-offer:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(108, 99, 255, 0.4);
+  color: white;
+}
+
+/* Right-side image: align proportion with left cards (larger image area) */
+.compact .vehicle-image-container {
+  min-height: 180px;
+  height: 200px;
+  max-height: 220px;
+  padding: 16px 0;
+  flex: none;
+  border-radius: 16px 16px 0 0;
+  background-color: #f5f5f5;
+}
+
+.compact .vehicle-image-container .vehicle-image {
+  width: 100%;
+  height: 100%;
+  max-height: 168px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 16px 16px 0 0;
+}
+
+.compact .card-title {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.compact .price {
+  font-size: 24px;
+}
+
+.compact .price-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 0;
+  margin-top: auto;
+}
+
+.compact .btn-offer {
+  padding: 8px 16px;
+  font-size: 12px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+}
+
+
+.compact .info-box {
+  padding: 8px;
+}
+
+.compact .info-icon {
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+}
+
+.compact .info-label {
+  font-size: 9px;
+}
+
+.compact .info-value {
+  font-size: 12px;
+}
+
+.compact .booking-info-section {
+  padding: 10px;
+}
+
+.compact .section-title {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.compact .detail-row {
+  margin-bottom: 15px;
+}
+
+.compact .detail-label {
+  font-size: 11px;
+}
+
+.compact .detail-value {
+  font-size: 13px;
+}
+
+.compact .badges {
+  margin-bottom: 12px;
+}
+
+/* Compact cards: fill parent when parent has fixed height (e.g. 400px at 1024px), else natural height */
+.transfer-card.compact {
+  min-height: 0;
+}
+
+.transfer-card.compact .card {
+  height: auto;
+  display: block;
+  background-color: #fff;
+}
+
+.transfer-card.compact .card-block-content {
+  background-color: #fff;
+}
+
+.transfer-card.compact .card-body {
+  height: auto;
+}
+
+.transfer-card.compact .card-layout {
+  flex: none;
+  min-height: 0;
+}
+
+.transfer-card.compact .card-content {
+  display: flex;
+  flex-direction: column;
+}
+
+/* At 992px+ (two-column), compact cards: natural height, no inner scroll */
+@media (min-width: 992px) {
+  .transfer-card.compact .vehicle-image-container {
+    flex: none;
+    height: 180px;
+    min-height: 160px;
+    max-height: 180px;
+    padding: 12px 0;
+  }
+
+  .transfer-card.compact .vehicle-image-container .vehicle-image {
+    max-height: 156px;
+  }
+
+  .transfer-card.compact .card-padding {
+    padding: 0.75rem 1rem;
+  }
+
+  .transfer-card.compact .spacing-bottom,
+  .transfer-card.compact .info-grid {
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* At 1024px and below, compact cards: natural height, no inner scroll */
+@media (max-width: 1024px) {
+  .transfer-card.compact .vehicle-image-container {
+    height: 120px;
+    min-height: 100px;
+    max-height: 120px;
+    padding: 10px 0;
+  }
+
+  .transfer-card.compact .vehicle-image-container .vehicle-image {
+    max-height: 100px;
+  }
+
+  .transfer-card.compact .card-padding {
+    padding: 0.75rem;
+  }
+
+  .transfer-card.compact .spacing-bottom,
+  .transfer-card.compact .info-grid {
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .vehicle-image-container {
+    min-height: 180px;
+  }
+
+  .card-title {
+    font-size: 16px;
+  }
+
+  .price {
+    font-size: 24px;
+  }
+}

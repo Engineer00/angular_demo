@@ -1,0 +1,191 @@
+/* transfers.component.css – Angular host-scoped, balanced left/right columns */
+
+:host {
+  display: block;
+  --transfer-page-bg: #f0f0f0;
+  --transfer-gap: 20px;
+  --transfer-gap-left: 8px;
+  --transfer-card-h: 520px;
+  --transfer-card-h-md: 480px;
+  --transfer-card-min: 350px;
+}
+
+:host .transfers-page {
+  background-color: var(--transfer-page-bg);
+  min-height: 100vh;
+  padding: 30px 0;
+}
+
+:host .main-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--transfer-gap-left);
+  min-height: 0;
+}
+
+:host .sidebar-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--transfer-gap);
+  position: sticky;
+  top: 20px;
+}
+
+:host .transfer-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--transfer-gap-left);
+  flex: 1;
+  min-height: 0;
+}
+
+:host .transfer-list app-transfer-card {
+  flex: 1;
+  min-height: 0;
+}
+
+:host .transfer-list app-transfer-card {
+  margin-bottom: 0;
+  display: flex;
+}
+
+:host .sidebar-transfers {
+  display: flex;
+  flex-direction: column;
+  gap: var(--transfer-gap);
+}
+
+/* Page container – same as container-fluid, scoped here */
+:host .page-container {
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 100%;
+}
+
+@media (min-width: 576px) {
+  :host .page-container {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+@media (min-width: 768px) {
+  :host .page-container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+@media (min-width: 992px) {
+  :host .page-container {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+
+/* Two-column layout: equal-height columns, gap between left and right as original */
+:host .page-layout {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 0;
+  margin-left: -80px;
+  margin-right: -80px;
+}
+
+:host .main-content {
+  flex: 0 0 100%;
+  padding: 0;
+  margin: 0;
+}
+
+:host .sidebar-content {
+  flex: 0 0 100%;
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+@media (min-width: 992px) {
+  :host .main-content {
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%;
+    align-self: stretch;
+  }
+  :host .sidebar-content {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+    align-self: stretch;
+    min-height: 0;
+    background-color: var(--transfer-page-bg);
+  }
+}
+
+/* Left column – consistent, flex-shrink so sidebar doesn’t stretch */
+:host .main-content .transfer-list app-transfer-card {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+}
+
+:host .sidebar-transfers app-transfer-card {
+  flex: 0 0 auto;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 1024px) {
+  :host .main-content .transfer-list app-transfer-card {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+  }
+  :host .sidebar-transfers app-transfer-card {
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  :host .transfer-list app-transfer-card,
+  :host .sidebar-transfers app-transfer-card {
+    height: auto;
+    min-height: var(--transfer-card-min);
+  }
+  :host .sidebar-transfers app-transfer-card.compact {
+    height: auto;
+  }
+  :host .sidebar-content {
+    align-self: stretch;
+  }
+}
+
+@media (max-width: 480px) {
+  :host .transfer-list app-transfer-card,
+  :host .sidebar-transfers app-transfer-card {
+    min-height: 300px;
+  }
+  :host .sidebar-transfers app-transfer-card.compact {
+    height: auto;
+  }
+}
+
+@media (max-width: 991.98px) {
+  :host .sidebar-content {
+    margin-top: 30px;
+    position: relative;
+    top: 0;
+  }
+}
+
+@media (min-width: 1280px) {
+  :host .page-container {
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 1600px) {
+  :host .page-container {
+    max-width: 1600px;
+  }
+}

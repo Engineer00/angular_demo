@@ -1,0 +1,29 @@
+<div class="booking-info-card">
+  <div class="card">
+    <div class="card-body card-body-padding">
+      <div class="booking-details">
+        <div class="detail-row detail-row-spacing">
+          <div class="detail-label">De la:</div>
+          <div class="detail-value">{{ bookingInfo.origin }}</div>
+        </div>
+        <div class="detail-row detail-row-spacing">
+          <div class="detail-label">Catre:</div>
+          <div class="detail-value">{{ bookingInfo.destination }}</div>
+        </div>
+        <div class="detail-row detail-row-spacing">
+          <div class="detail-icon">
+            <span class="material-symbols-outlined">calendar_today</span>
+          </div>
+          <div class="detail-value">{{ bookingInfo.dateRange }}</div>
+        </div>
+        <div class="detail-row detail-row-spacing-lg">
+          <div class="detail-icon">
+            <span class="material-symbols-outlined">group</span>
+          </div>
+          <div class="detail-value">{{ bookingInfo.guests }}</div>
+        </div>
+        <button type="button" class="btn-modify btn-full-width">Modifica</button>
+      </div>
+    </div>
+  </div>
+</div>

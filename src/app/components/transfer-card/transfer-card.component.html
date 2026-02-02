@@ -1,0 +1,81 @@
+<div class="transfer-card" [class.compact]="isCompact">
+  <div class="card card-full-height">
+    <div class="card-body card-body-no-padding">
+      <div class="card-layout">
+        <div class="card-block-image" [class.card-block-full]="isCompact">
+          <div class="vehicle-image-container">
+            <img [src]="transfer.vehicleImage" alt="Vehicle" class="vehicle-image">
+          </div>
+        </div>
+
+        <div class="card-block-content" [class.card-block-full]="isCompact">
+          <div class="card-content card-padding">
+            <div class="badges spacing-sm">
+              <span class="badge badge-standard">Standard</span>
+              <span class="badge badge-shuttle">SHUTTLE</span>
+            </div>
+
+            <h3 class="card-title spacing-bottom">{{ transfer.title }}</h3>
+
+            <!-- 2x2 grid: Row1 Timp estimat, Bagaje permise; Row2 Minim pasageri, Maxim pasageri -->
+            <div class="info-grid spacing-bottom">
+              <div class="info-grid-item">
+                <div class="info-pill info-pill-blue">
+                  <span class="pill-icon-wrap">
+                    <span class="material-symbols-outlined pill-icon">schedule</span>
+                  </span>
+                  <div class="pill-text">
+                    <span class="pill-label">Timp estimat</span>
+                    <span class="pill-value">{{ transfer.estimatedTime || '60 min.' }}</span>
+                  </div>
+                </div>
+              </div>
+              <div class="info-grid-item">
+                <div class="info-pill info-pill-pink">
+                  <span class="pill-icon-wrap">
+                    <span class="material-symbols-outlined pill-icon">luggage</span>
+                  </span>
+                  <div class="pill-text">
+                    <span class="pill-label">Bagaje permise</span>
+                    <span class="pill-value">{{ transfer.mediumLuggage }}</span>
+                  </div>
+                </div>
+              </div>
+              <div class="info-grid-item">
+                <div class="info-pill info-pill-orange">
+                  <span class="pill-icon-wrap">
+                    <span class="material-symbols-outlined pill-icon">person</span>
+                  </span>
+                  <div class="pill-text">
+                    <span class="pill-label">Minim pasageri</span>
+                    <span class="pill-value">{{ transfer.minPassengers || '4 pasageri' }}</span>
+                  </div>
+                </div>
+              </div>
+              <div class="info-grid-item">
+                <div class="info-pill info-pill-green">
+                  <span class="pill-icon-wrap">
+                    <span class="material-symbols-outlined pill-icon">group</span>
+                  </span>
+                  <div class="pill-text">
+                    <span class="pill-label">Maxim pasageri</span>
+                    <span class="pill-value">{{ transfer.maxPersons }}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="price-section">
+              <div class="price-container">
+                <div class="price">€{{ transfer.price }}</div>
+                <div class="price-detail price-disclaimer" *ngIf="isCompact">(Pret dual inclus, pt. toti pasageri)</div>
+                <div class="price-detail price-disclaimer" *ngIf="!isCompact">(Pret dus-intors pt. toti pasagerii)</div>
+              </div>
+              <button type="button" class="btn-offer" [class.btn-offer-full]="isCompact">Vezi oferta</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

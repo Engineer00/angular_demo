@@ -1,0 +1,26 @@
+<div class="transfers-page">
+  <div class="page-container">
+    <div class="page-layout">
+      <div class="main-content">
+        <div class="transfer-list">
+          <app-transfer-card
+            *ngFor="let transfer of mainTransfers"
+            [transfer]="transfer"
+            [isCompact]="false">
+          </app-transfer-card>
+        </div>
+      </div>
+
+      <div class="sidebar-content">
+        <app-booking-info [bookingInfo]="bookingInfo"></app-booking-info>
+        <div class="sidebar-transfers">
+          <app-transfer-card
+            *ngFor="let transfer of sidebarTransfers"
+            [transfer]="transfer"
+            [isCompact]="true">
+          </app-transfer-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
