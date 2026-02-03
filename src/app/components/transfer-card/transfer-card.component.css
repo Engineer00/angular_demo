@@ -230,34 +230,41 @@
 .transfer-card:not(.compact) .price-section {
   margin-top: auto;
   margin-bottom: 0;
-  align-items: flex-end;
+  align-items: center;
   padding-top: 20px;
   border-top: 1px solid #e5e5e5;
-}
-
-.transfer-card:not(.compact) .price {
-  margin-bottom: 6px;
-  font-size: 34px;
-  font-weight: 800;
-}
-
-.transfer-card:not(.compact) .price-detail,
-.transfer-card:not(.compact) .price-disclaimer {
-  margin: 0;
-  font-size: 14px;
+  gap: 16px;
+  flex-wrap: nowrap;
 }
 
 .transfer-card:not(.compact) .price-container {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  flex-shrink: 0;
+  min-width: 0;
+}
+
+.transfer-card:not(.compact) .price {
+  margin-bottom: 2px;
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.transfer-card:not(.compact) .price-detail,
+.transfer-card:not(.compact) .price-disclaimer {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.3;
 }
 
 .transfer-card:not(.compact) .btn-offer {
-  padding: 14px 28px;
-  font-size: 16px;
-  border-radius: 28px;
-  max-width: 160px;
+  padding: 12px 24px;
+  font-size: 15px;
+  border-radius: 26px;
+  max-width: 150px;
+  flex-shrink: 0;
 }
 
 .transfer-card:not(.compact) .vehicle-image {
@@ -803,7 +810,21 @@
 
 @media (max-width: 767.98px) {
   .vehicle-image-container {
-    min-height: 180px;
+    min-height: 140px;
+  }
+
+  /* Left-column cards on mobile: smaller image so content below is visible */
+  .transfer-card:not(.compact) .vehicle-image-container {
+    height: auto;
+    min-height: 140px;
+    max-height: 200px;
+    flex: none;
+  }
+
+  .transfer-card:not(.compact) .vehicle-image {
+    height: auto;
+    max-height: 200px;
+    object-fit: contain;
   }
 
   .card-title {
