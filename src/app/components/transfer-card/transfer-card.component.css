@@ -879,20 +879,23 @@
     font-size: 24px;
   }
 
-  /* Main card: stack price + full-width button on mobile for better tap and layout */
+  /* Main card on mobile: price and button on one line */
   .transfer-card:not(.compact) .price-section {
-    flex-direction: column;
-    align-items: stretch;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
     gap: 12px;
   }
 
   .transfer-card:not(.compact) .price-container {
     margin-bottom: 0;
+    flex-shrink: 0;
+    min-width: 0;
   }
 
   .transfer-card:not(.compact) .btn-offer {
-    width: 100%;
-    padding: 14px 20px;
+    flex-shrink: 0;
+    padding: 12px 20px;
     font-size: 15px;
   }
 }
