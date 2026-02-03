@@ -810,21 +810,43 @@
 
 @media (max-width: 767.98px) {
   .vehicle-image-container {
-    min-height: 140px;
+    min-height: 120px;
   }
 
-  /* Left-column cards on mobile: smaller image so content below is visible */
+  /* Mobile: single column – image on top, content below, no blank space */
+  .transfer-card:not(.compact) .card-layout {
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+
+  .transfer-card:not(.compact) .card-block-image,
+  .transfer-card:not(.compact) .card-block-content {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 100%;
+  }
+
   .transfer-card:not(.compact) .vehicle-image-container {
     height: auto;
-    min-height: 140px;
-    max-height: 200px;
+    min-height: 120px;
+    max-height: 180px;
     flex: none;
+    width: 100%;
   }
 
   .transfer-card:not(.compact) .vehicle-image {
     height: auto;
-    max-height: 200px;
+    max-height: 180px;
     object-fit: contain;
+    width: 100%;
+  }
+
+  .transfer-card:not(.compact) .card-block-content {
+    background-color: #fff;
+  }
+
+  .transfer-card:not(.compact) .card-padding {
+    padding: 1rem 1.25rem;
   }
 
   .card-title {
