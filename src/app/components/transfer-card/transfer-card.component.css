@@ -827,9 +827,9 @@
   }
 
   .transfer-card:not(.compact) .vehicle-image-container {
-    height: 180px;
-    min-height: 120px;
-    max-height: 180px;
+    height: 220px;
+    min-height: 180px;
+    max-height: 220px;
     flex: none;
     width: 100%;
     padding: 0;
@@ -903,9 +903,9 @@
 /* Very small phones: slightly smaller image and tighter padding */
 @media (max-width: 480px) {
   .transfer-card:not(.compact) .vehicle-image-container {
-    height: 160px;
-    min-height: 140px;
-    max-height: 160px;
+    height: 200px;
+    min-height: 180px;
+    max-height: 200px;
   }
 
   .transfer-card:not(.compact) .card-padding {
