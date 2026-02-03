@@ -827,9 +827,9 @@
   }
 
   .transfer-card:not(.compact) .vehicle-image-container {
-    height: 220px;
-    min-height: 180px;
-    max-height: 220px;
+    height: 280px;
+    min-height: 220px;
+    max-height: 280px;
     flex: none;
     width: 100%;
     padding: 0;
@@ -848,7 +848,39 @@
   }
 
   .transfer-card:not(.compact) .card-padding {
-    padding: 1rem 1.25rem;
+    padding: 1.25rem 1.25rem;
+  }
+
+  /* Main card: taller details grid on mobile */
+  .transfer-card:not(.compact) .badges {
+    margin-bottom: 12px;
+  }
+
+  .transfer-card:not(.compact) .card-title {
+    margin-bottom: 18px;
+  }
+
+  .transfer-card:not(.compact) .info-grid {
+    gap: 14px;
+    margin-bottom: 22px;
+  }
+
+  .transfer-card:not(.compact) .info-pill {
+    padding: 14px 14px;
+    min-height: 56px;
+    align-items: center;
+  }
+
+  .transfer-card:not(.compact) .pill-icon {
+    font-size: 20px;
+  }
+
+  .transfer-card:not(.compact) .pill-label {
+    font-size: 12px;
+  }
+
+  .transfer-card:not(.compact) .pill-value {
+    font-size: 14px;
   }
 
   /* Compact cards on mobile: image stretches to both sides */
@@ -903,9 +935,9 @@
 /* Very small phones: slightly smaller image and tighter padding */
 @media (max-width: 480px) {
   .transfer-card:not(.compact) .vehicle-image-container {
-    height: 200px;
-    min-height: 180px;
-    max-height: 200px;
+    height: 260px;
+    min-height: 220px;
+    max-height: 260px;
   }
 
   .transfer-card:not(.compact) .card-padding {
@@ -923,21 +955,22 @@
   }
 
   .transfer-card:not(.compact) .card-title {
-    margin-bottom: 12px;
+    margin-bottom: 14px;
     font-size: 15px;
   }
 
   .transfer-card:not(.compact) .info-grid {
-    gap: 8px;
-    margin-bottom: 14px;
+    gap: 12px;
+    margin-bottom: 18px;
   }
 
   .transfer-card:not(.compact) .info-pill {
-    padding: 6px 10px;
+    padding: 12px 12px;
+    min-height: 52px;
   }
 
   .transfer-card:not(.compact) .pill-icon {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .transfer-card:not(.compact) .pill-label {
